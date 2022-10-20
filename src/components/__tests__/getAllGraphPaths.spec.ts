@@ -1,9 +1,10 @@
+import { ADJACENCY_MAP } from '../..';
 import { getAllGraphPaths } from '../getAllGraphPaths';
 
 describe('#getAllGraphPaths', () => {
   describe('From A to H', () => {
     it('returns all the paths', () => {
-      const paths = getAllGraphPaths('A', 'H');
+      const paths = getAllGraphPaths(ADJACENCY_MAP, 'A', 'H');
       expect(paths).toMatchInlineSnapshot(`
 [
   [
