@@ -1,4 +1,5 @@
-export type NODE = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H';
+import { NODE } from './types';
+
 export const ADJACENCY_MAP: {
   [k in NODE]: NODE[];
 } = {

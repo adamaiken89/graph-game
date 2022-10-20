@@ -1,4 +1,5 @@
-import { ADJACENCY_MAP, NODE } from '../constant';
+import { ADJACENCY_MAP } from '../constant';
+import { NODE } from '../types';
 
 export const getAllGraphPaths = (startNode: NODE, endNode: NODE) => {
   let paths: NODE[][] = [];

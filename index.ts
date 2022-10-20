@@ -1,8 +1,8 @@
-import { getAllGraphPaths } from './components/getAllGraphPaths';
-import { getShortestPath } from './components/getShortestPath';
+import { getAllGraphPathsBFS } from './components/getAllGraphPathsBFS';
+import { getShortestPathBFS } from './components/getShortestPathBFS';
 
-const paths = getAllGraphPaths('A', 'H');
-paths.map((path) => console.log(`The path is ${path}`));
+const pathsBFS = getAllGraphPathsBFS('A', 'H');
+pathsBFS.map((path) => console.log(`The path is ${path} using BFS`));
 
-const shortestPath = getShortestPath('A', 'H');
-console.log(`The shortest path is ${shortestPath}`);
+const shortestPathBSF = getShortestPathBFS('A', 'H');
+console.log(`The shortest path is ${shortestPathBSF} usng BFS`);

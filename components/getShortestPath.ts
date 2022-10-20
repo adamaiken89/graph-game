@@ -1,4 +1,4 @@
-import { NODE } from '../constant';
+import { NODE } from '../types';
 import { getAllGraphPaths } from './getAllGraphPaths';
 
 // Choose the first one the program find when there are more than one answers
