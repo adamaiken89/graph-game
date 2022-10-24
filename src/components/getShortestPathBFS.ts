@@ -1,4 +1,4 @@
-import { ADJACENCY_MAP } from '../constant';
+import { ADJACENCY_MAP } from '../constants';
 import { NODE } from '../types';
 
 export const getShortestPathBFS = (startNode: NODE, endNode: NODE) => {

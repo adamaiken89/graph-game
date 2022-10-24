@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "start": "ts-node ./src/index.ts"
   },
   "dependencies": {
     "typescript": "^4.8.4"
