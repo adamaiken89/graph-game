@@ -1,1 +1,5 @@
-export type NODE = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H';
+export type GraphNode = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H';
+
+export type GraphMap = {
+  [k in GraphNode]: GraphNode[];
+};

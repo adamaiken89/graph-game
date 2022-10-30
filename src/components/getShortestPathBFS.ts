@@ -1,13 +1,16 @@
-import { ADJACENCY_MAP } from '../constants';
-import { NODE } from '../types';
+import { GraphMap, GraphNode } from '../types';
 
-export const getShortestPathBFS = (startNode: NODE, endNode: NODE) => {
-  let path: NODE[] = [];
-  const graphTransversal = (endNode: NODE, possiblePaths: NODE[][]) => {
-    let newPossiblePaths: NODE[][] = [];
+export const getShortestPathBFS = (
+  adjacencyMap: GraphMap,
+  startNode: GraphNode,
+  endNode: GraphNode
+) => {
+  let path: GraphNode[] = [];
+  const graphTraversal = (endNode: GraphNode, possiblePaths: GraphNode[][]) => {
+    let newPossiblePaths: GraphNode[][] = [];
     for (const possiblePath of possiblePaths) {
       const lastNode = possiblePath[possiblePath.length - 1];
-      const tempPossiblePaths = ADJACENCY_MAP[lastNode]
+      const tempPossiblePaths = adjacencyMap[lastNode]
         .filter((nextNode) => !possiblePath.includes(nextNode))
         .map(function getNewPath(nextNode) {
           return [...possiblePath, nextNode];
@@ -27,9 +30,9 @@ export const getShortestPathBFS = (startNode: NODE, endNode: NODE) => {
     if (newPossiblePaths.length === 0) {
       return;
     }
-    graphTransversal(endNode, newPossiblePaths);
+    graphTraversal(endNode, newPossiblePaths);
   };
 
-  graphTransversal(endNode, [[startNode]]);
+  graphTraversal(endNode, [[startNode]]);
   return path;
 };

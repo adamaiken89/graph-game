@@ -1,21 +1,25 @@
-import { ADJACENCY_MAP } from '../constants';
-import { NODE } from '../types';
+import { GraphMap, GraphNode } from '../types';
 
-export const getAllGraphPaths = (startNode: NODE, endNode: NODE) => {
-  let paths: NODE[][] = [];
-  const graphTransversal = (startNode: NODE, endNode: NODE, list: NODE[]) => {
-    ADJACENCY_MAP[startNode]
+export const getAllGraphPaths = (
+  adjacencyMap: GraphMap,
+  currentNode: GraphNode,
+  endNode: GraphNode
+) => {
+  let paths: GraphNode[][] = [];
+  const graphTraversal = (endNode: GraphNode, list: GraphNode[]) => {
+    const currentNode = list[list.length - 1];
+    adjacencyMap[currentNode]
       .filter((nextNode) => !list.includes(nextNode))
-      .map(function transvseGraphOrReturnPath(nextNode) {
+      .map(function returnPathOrTraverseGraph(nextNode) {
         const newList = [...list, nextNode];
         if (nextNode === endNode) {
           paths = [...paths, newList];
           return;
         }
-        graphTransversal(nextNode, endNode, newList);
+        graphTraversal(endNode, newList);
       });
   };
 
-  graphTransversal(startNode, endNode, [startNode]);
+  graphTraversal(endNode, [currentNode]);
   return paths;
 };
