@@ -16,5 +16,5 @@ export const ADJACENCY_MAP: GraphMap = {
 const pathsBFS = getAllGraphPathsBFS(ADJACENCY_MAP, 'A', 'H');
 pathsBFS.map((path) => console.log(`The path is ${path} by BFS`));
 
-const shortestPathBSF = getShortestPathBFS(ADJACENCY_MAP, 'A', 'H');
-console.log(`The shortest path is ${shortestPathBSF} by BFS`);
+const shortestPathBFS = getShortestPathBFS(ADJACENCY_MAP, 'A', 'H');
+console.log(`The shortest path is ${shortestPathBFS} by BFS`);
