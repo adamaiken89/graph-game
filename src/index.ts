@@ -2,7 +2,7 @@ import { getAllGraphPathsBFS } from './components/getAllGraphPathsBFS';
 import { getShortestPathBFS } from './components/getShortestPathBFS';
 import { GraphMap } from './types';
 
-export const ADJACENCY_MAP: GraphMap = {
+export const adjacencyMap: GraphMap = {
   A: ['B', 'D', 'H'],
   B: ['A', 'C', 'D'],
   C: ['B', 'D', 'F'],
@@ -11,10 +11,10 @@ export const ADJACENCY_MAP: GraphMap = {
   F: ['C', 'E', 'G'],
   G: ['F', 'H'],
   H: ['F', 'H'],
-};
+} as const;
 
-const pathsBFS = getAllGraphPathsBFS(ADJACENCY_MAP, 'A', 'H');
+const pathsBFS = getAllGraphPathsBFS(adjacencyMap, 'A', 'H');
 pathsBFS.map((path) => console.log(`The path is ${path} by BFS`));
 
-const shortestPathBFS = getShortestPathBFS(ADJACENCY_MAP, 'A', 'H');
+const shortestPathBFS = getShortestPathBFS(adjacencyMap, 'A', 'H');
 console.log(`The shortest path is ${shortestPathBFS} by BFS`);

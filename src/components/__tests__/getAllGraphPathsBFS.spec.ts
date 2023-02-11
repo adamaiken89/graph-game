@@ -1,10 +1,10 @@
 import { getAllGraphPathsBFS } from '../getAllGraphPathsBFS';
-import { ADJACENCY_MAP } from '../../index';
+import { adjacencyMap } from '../../index';
 
 describe('#getAllGraphPathsBFS', () => {
   describe('From A to H', () => {
     it('returns all the paths', () => {
-      const paths = getAllGraphPathsBFS(ADJACENCY_MAP, 'A', 'H');
+      const paths = getAllGraphPathsBFS(adjacencyMap, 'A', 'H');
       expect(paths).toMatchInlineSnapshot(`
 [
   [
