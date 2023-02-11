@@ -6,17 +6,17 @@ export const getAllGraphPaths = (
   endNode: GraphNode
 ) => {
   let paths: GraphNode[][] = [];
-  const graphTraversal = (endNode: GraphNode, list: GraphNode[]) => {
-    const currentNode = list[list.length - 1];
+  const graphTraversal = (endNode: GraphNode, traversed: GraphNode[]) => {
+    const currentNode = traversed[traversed.length - 1];
     adjacencyMap[currentNode]
-      .filter((nextNode) => !list.includes(nextNode))
+      .filter((nextNode) => !traversed.includes(nextNode))
       .map(function returnPathOrTraverseGraph(nextNode) {
-        const newList = [...list, nextNode];
+        const newTraversed = [...traversed, nextNode];
         if (nextNode === endNode) {
-          paths = [...paths, newList];
+          paths = [...paths, newTraversed];
           return;
         }
-        graphTraversal(endNode, newList);
+        graphTraversal(endNode, newTraversed);
       });
   };
 
