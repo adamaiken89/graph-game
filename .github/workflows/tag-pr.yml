@@ -2,8 +2,7 @@ name: Tag PR CI
 
 on:
   push:
-    tags:
-      - '*'
+    branches: ["dev"]
 
 jobs:
   comment:
