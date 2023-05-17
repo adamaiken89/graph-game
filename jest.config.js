@@ -5,4 +5,5 @@ module.exports = {
     '^.+\\.ts?$': 'ts-jest',
   },
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
+  reporters: [['github-actions', {silent: false}], 'summary'],
 };
