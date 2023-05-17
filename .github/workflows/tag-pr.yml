@@ -1,0 +1,15 @@
+name: Tag PR CI
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create a Pull Request in case the commit has tagged
+        run: gh pr create --base main --head test --title "promote: main"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
