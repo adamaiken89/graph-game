@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create a Pull Request in case the commit has tagged
-        run: gh pr create --base main --head dev --title "Promote: main" --body "Nothing"
+        run: |
+          gh pr create --base main --head dev --title "Promote: main" --body "Nothing"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
