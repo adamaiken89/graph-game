@@ -1,0 +1,13 @@
+name: Echo commit
+
+on:
+  push:
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Create a Pull Request in case the commit has tagged
+        run: |
+          echo $(git rev-parse --short HEAD)
