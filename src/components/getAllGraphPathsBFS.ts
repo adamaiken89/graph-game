@@ -7,7 +7,7 @@ export const getAllGraphPathsBFS = (
 ) => {
   let paths: GraphNode[][] = [];
   const graphTraversal = (endNode: GraphNode, possiblePaths: GraphNode[][]) => {
-    const newPossiblePaths = possiblePaths.reduce((result, possiblePath) => {
+    const newPossiblePaths = possiblePaths.reduce((result: GraphNode[][], possiblePath) => {
       const notHitBack = (nextNode: GraphNode) =>
         !possiblePath.includes(nextNode);
       const getNewPath = (nextNode: GraphNode) => [...possiblePath, nextNode];
@@ -25,7 +25,7 @@ export const getAllGraphPathsBFS = (
         .map(getNewPath)
         .filter(notArriveDestination);
       return [...result, ...newPossiblePath];
-    }, [] as GraphNode[][]);
+    }, []);
 
     if (newPossiblePaths.length === 0) {
       return;
