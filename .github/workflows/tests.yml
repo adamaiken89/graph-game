@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: TEST ECHO
+        run: echo $GITHUB_HEAD_REF
       - name: Test using Node.js
         uses: actions/setup-node@v3
         with:
