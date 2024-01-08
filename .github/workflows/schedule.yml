@@ -1,0 +1,21 @@
+name: Octo Organization CI
+
+on:
+  schedule:
+    - cron: '0/4 * * * 1-5'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run a one-line script
+        run: echo Hello from Octo Organization
+
+      - name: Check Event Action
+        run: |
+          echo "This Event Action is :$ACTION"
+        env:
+          ACTION: ${{github.event.action}}
