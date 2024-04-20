@@ -2,22 +2,25 @@
 
 ## Run Program (Traversal using BFS)
 
-```
-$ npm run start
+```bash
+npm run start
 ```
 
 ## Run Test
 
-```
-$ npm run test
+```bash
+npm run test
 ```
 
 ---
 
 File Strcture
 
+```bash
+tree -C -F -I 'node_modules' -I 'coverage'
 ```
-$ tree -C -F -I 'node_modules' -I 'coverage'
+```bash
+
 ./
 ├── README.md
 ├── jest.config.js
