@@ -14,7 +14,7 @@ npm run test
 
 ---
 
-File Strcture
+File Structure
 
 ```bash
 tree -C -F -I 'node_modules' -I 'coverage'
